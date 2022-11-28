@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>History</h2>
+    <div class="d-flex justify-content-around">
+        <table style="width:60%">
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Buy/Sell</th>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Date-Time</th>
+            </tr>
+            {% for stock in history %}
+            <tr>
+                <td>{{ stock.bs }}</td>
+                <td>{{ stock.symbol }}</td>
+                <td>{{ stock.price }}</td>
+                <td>{{ stock.shares }}</td>
+                <td>{{ stock.datetime }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+     </div>
+{% endblock %}

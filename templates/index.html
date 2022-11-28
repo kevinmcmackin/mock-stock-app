@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>Portfolio</h2>
+    <div class="d-flex justify-content-around">
+        <table style="width:60%">
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            {% for stock in portfolio %}
+            <tr>
+                <td>{{ stock.symbol }}</td>
+                <td>{{ stock.name }}</td>
+                <td>{{ stock.shares }}</td>
+                <td>{{ stock.price|usd() }}</td>
+                <td>{{ stock.total|usd() }}</td>
+            </tr>
+            {% endfor %}
+            {% for money in cash %}
+            <tr>
+                <td>{{""}}</td>
+                <td>{{""}}</td>
+                <td>{{""}}</td>
+                <td>{{ "Cash" }}</td>
+                <td>{{ money.cash|round(2)|usd() }}</td>
+            </tr>
+            {% endfor %}
+
+            <tr>
+                <td>{{""}}</td>
+                <td>{{""}}</td>
+                <td>{{""}}</td>
+                <td>{{ "Total" }}</td>
+                <td>{{ tot|usd() }}</td>
+            </tr>
+
+        </table>
+     </div>
+{% endblock %}

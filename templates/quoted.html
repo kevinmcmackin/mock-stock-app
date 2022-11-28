@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>Portfolio</h2>
+    <div class="d-flex justify-content-around">
+        <table style="width:30%">
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>{{ thestockticker }}</td>
+                <td>{{ thestockname }}</td>
+                <td>{{ thestockprice }}</td>
+            </tr>
+        </table>
+     </div>
+{% endblock %}
